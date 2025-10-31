@@ -1,0 +1,81 @@
+// #pragma once
+// #include <Arduino.h> // Diperlukan untuk millis(), digitalRead(), dll.
+
+// class button
+// {
+// private:
+//     // Pin & State Flags
+//     int _pin;
+//     bool mode;
+//     bool lastMode = false;
+//     bool removeData = false;
+//     bool lastRemoveData = false;
+
+//     // Variabel untuk State Machine & Timing manual
+//     int buttonState;
+//     int lastButtonState;
+//     int reading;
+
+//     unsigned long lastDebounceTime;
+//     unsigned long debounceDelay;
+
+//     unsigned long longPressTime;
+//     unsigned long longPressDelay;
+//     bool isLongPress;
+
+//     unsigned long lastClickTime;
+//     unsigned long doubleClickTimeout;
+//     byte clickCount;
+
+//     // Fungsi privat untuk aksi
+//     void onDoubleClick();
+//     void onLongPress();
+
+// public:
+//     button(int pin) : _pin(pin) {
+//         mode = false;
+//         removeData = false;
+//         lastMode = false;
+//         lastRemoveData = false;
+//         // Inisialisasi variabel status
+//         lastButtonState = HIGH; // Asumsi tombol tidak ditekan (pull-up)
+//         buttonState = HIGH;
+//         lastDebounceTime = 0;
+//         reading = HIGH;
+//         longPressTime = 0;
+//         lastClickTime = 0;
+//         clickCount = 0;
+//         isLongPress = false;
+
+//         // Nilai waktu (bisa diubah sesuai kebutuhan)
+//         debounceDelay = 50;      // 50 ms
+//         longPressDelay = 1000;   // 1 detik
+//         doubleClickTimeout = 300; // 300 ms
+//     }
+
+//     void begin();
+//     // Mengembalikan nilai mode hanya jika terjadi perubahan nilai
+//     bool getMode() {
+//         if (mode) {
+//             mode = false; // Reset setelah dibaca
+//             return true;
+//         }
+//         return false;
+//     }
+//     bool setMode(bool value) {
+//         mode = value;
+//         return mode;
+//     }
+//     bool getRemove() { 
+//         if (removeData) {
+//             removeData = false; // Reset setelah dibaca
+//             return true;
+//         }
+//         return false;
+//     }
+//     bool setRemove(bool value) {
+//         removeData = value;
+//         return removeData;
+//     }
+//     void tick();
+// };

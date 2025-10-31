@@ -1,0 +1,82 @@
+// #include "button.h"
+
+// void button::begin() {
+//     pinMode(_pin, INPUT_PULLUP);
+// }
+
+// void button::onDoubleClick() {
+//     mode = true;
+//     // Serial.println("Double Click Detected!"); // Untuk debug
+// }
+
+// void button::onLongPress() {
+//     removeData = true;
+//     // Serial.println("Long Press Detected!"); // Untuk debug
+// }
+
+// void button::tick() {
+//     // 1. Baca status pin
+//     reading = digitalRead(_pin);
+
+//     // Ignore initial unstable reading
+//     if (lastDebounceTime == 0) {
+//         lastDebounceTime = millis();
+//         lastButtonState = reading;
+//         return;
+//     }
+
+//     // Debug pin reading
+//     // Serial.print("Pin Reading: ");
+//     // Serial.println(reading);
+
+//     // 2. Debouncing
+//     if (reading != lastButtonState) {
+//         lastDebounceTime = millis();
+//         Serial.println("Button state changed - debounce started");
+//     }
+
+//     if ((millis() - lastDebounceTime) > debounceDelay) {
+//         if (reading != buttonState) {
+//             buttonState = reading;
+
+//             if (buttonState == LOW) {
+//                 isLongPress = false;
+//                 longPressTime = millis();
+//                 Serial.println("Button PRESSED");
+//             }
+//             else {
+//                 if (!isLongPress) {
+//                     clickCount++;
+//                     lastClickTime = millis();
+//                     Serial.print("Click count: ");
+//                     Serial.println(clickCount);
+//                 }
+//             }
+//         }
+//     }
+
+//     lastButtonState = reading;
+
+//     // 3. Long Press Check
+//     if (buttonState == LOW && !isLongPress) {
+//         unsigned long durasiTahan = millis() - longPressTime;
+//         // Serial.print("Hold duration: ");
+//         // Serial.println(durasiTahan);
+        
+//         if (durasiTahan > longPressDelay) {
+//             Serial.println("Long press detected!");
+//             onLongPress();
+//             isLongPress = true;
+//         }
+//     }
+
+//     // 4. Double Click Check
+//     if (clickCount > 0 && (millis() - lastClickTime) > doubleClickTimeout) {
+//         if (clickCount == 2) {
+//             Serial.println("Double click detected!");
+//             onDoubleClick();
+//         }
+//         Serial.println("Click count reset");
+//         clickCount = 0;
+//     }
+// }
